@@ -21,6 +21,7 @@ import {
   NbWindowModule,
 } from '@nebular/theme';
 import { NbPasswordAuthStrategy, NbAuthModule, NbAuthJWTToken } from '@nebular/auth';
+import { NbSecurityModule } from '@nebular/security';
 
 @NgModule({
   declarations: [AppComponent],
@@ -71,12 +72,13 @@ import { NbPasswordAuthStrategy, NbAuthModule, NbAuthJWTToken } from '@nebular/a
           },*/ 
           token: {
             class : NbAuthJWTToken,
-            key: 'token', // this parameter tells where to look for the token
+            key: 'access', // this parameter tells where to look for the token
           }
         }),
       ],
       forms: {},
     }), 
+ 
   ],
   bootstrap: [AppComponent],
 })

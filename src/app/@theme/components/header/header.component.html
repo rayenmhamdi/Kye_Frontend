@@ -20,8 +20,7 @@
     <nb-action class="user-action" *nbIsGranted="['view', 'user']" >
       <nb-user [nbContextMenu]="userMenu"
                [onlyPicture]="userPictureOnly"
-               [name]="user?.name"
-               [picture]="user?.picture">
+               [name]="user?.lastname">
       </nb-user>
     </nb-action>
   </nb-actions>

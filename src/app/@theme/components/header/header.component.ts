@@ -53,6 +53,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
         
         if (token.isValid()) {
           this.user = token.getPayload(); // here we receive a payload from the token and assigns it to our `user` variable 
+          this.currentTheme = this.user.theme;
+          this.changeTheme(this.currentTheme);
           console.log(this.user);
         }else{
           console.log('invalid');
@@ -61,11 +63,12 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.currentTheme = this.themeService.currentTheme;
+    //this.currentTheme = this.themeService.currentTheme;
 
-    this.userService.getUsers()
+    /*this.userService.getUsers()
       .pipe(takeUntil(this.destroy$))
-      .subscribe((users: any) => this.user = users.rayen);
+      .subscribe((users: any) => this.user = users.rayen);*/
+
 
     const { xl } = this.breakpointService.getBreakpointsMap();
     this.themeService.onMediaQueryChange()
